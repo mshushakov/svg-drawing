@@ -10,4 +10,4 @@ Simple app to draw images using colored circles
 * Pressed mouse + moving creates a circle of any size
 * Pressed Shift button and click on any circle removes this circle
 
-### Have fun!
+__Have fun!__
