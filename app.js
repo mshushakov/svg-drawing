@@ -30,6 +30,9 @@ svg.addEventListener('mousedown', function(e) {
 		}
 		elem.classList.add('focused');
 	}
+	if (e.target.tagName === 'circle' && e.altKey) {
+		stage.remove(elem);
+	}
 	else if (e.shiftKey) {
 		point = { x: stage.localX(e.clientX), y: stage.localY(e.clientY) };
 		if (document.querySelector('circle.focused')) document.querySelector('circle.focused').classList.remove('focused');
@@ -37,6 +40,7 @@ svg.addEventListener('mousedown', function(e) {
 		elem.classList.add(colorClass);
 		stage.add(elem);
 	}
+	console.log(e);
 });
 
 svg.addEventListener('mousemove', function(e) {
