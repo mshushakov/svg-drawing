@@ -2,12 +2,12 @@
 
 Simple app to draw images using colored circles
 
-![:)](http://i64.tinypic.com/9u7n11.png)
+![:)](http://tinypic.com/r/30abdd5/9)
 
 ## How to use
 * Choose a color from the list of colors on top right corner
-* Simple click creates a small circle
-* Pressed mouse + moving creates a circle of any size
-* Pressed _shift_ button + click on any circle removes this circle
+* Press _shift_ and start drawing circles of any size
+* Unpress _shift_ and move circles around viewport
+* Press _control_ and click on circle to remove it
 
 __Have fun!__
