@@ -66,4 +66,16 @@ class SVGStage {
         this.shapes.delete(shape);
         this.svg.removeChild(shape);;
     }
+
+    localX(globalX) { 
+        return globalX - this.svg.getBoundingClientRect().x;
+    }
+
+    localY(globalY) { 
+        return globalY - this.svg.getBoundingClientRect().y;
+    }
+
+    /*get items = function* () {
+
+    }*/
 }

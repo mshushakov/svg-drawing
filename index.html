@@ -10,6 +10,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        position: relative;
     }
 
     svg {
@@ -17,6 +18,8 @@
         user-select: none;
         -moz-user-drag: none; 
         -moz-user-select: none;
+        width: 100%;
+        height: 100%;
     }
 
     circle {
@@ -29,8 +32,11 @@
     	right: 5px;
     }
 
+    .focused { opacity: 0.5; z-index: 1; }
+
     .colors li { display: inline-block; border: 8px solid; }
     .colors li.selected { outline: 1px solid #666; }
+    .colors li.focused { outline: 1px solid #666; }
 
     .color-0 { color: #EEE }
     .color-1 { color: #AD8B6D }
@@ -49,7 +55,7 @@
 	<li class="color-5"></li>
 </ul>
 
-<svg width="100%" height="100%" draggable="false"></svg>
+<svg draggable="false"></svg>
 
 <script type="application/javascript" src="svg-drawer.js"></script>
 <script type="application/javascript" src="app.js"></script>
