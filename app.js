@@ -21,7 +21,18 @@ document.querySelector('.colors').addEventListener('click', function(e) {
 svg.addEventListener('mousedown', function(e) {
 	stage.shapes.forEach(shape => shape.classList.remove('focused'));
 	
-	if (e.target.tagName === 'circle' && !e.shiftKey) {
+	if (e.target.tagName === 'circle' && e.altKey) {
+		elem = e.target;
+		stage.remove(elem);
+	}
+	else if (e.target.tagName !== 'circle' || (e.target.tagName === 'circle' && e.shiftKey)) {
+		point = { x: stage.localX(e.clientX), y: stage.localY(e.clientY) };
+		if (document.querySelector('circle.focused')) document.querySelector('circle.focused').classList.remove('focused');
+		elem = SVGShapes.createCircle({ x: point.x, y: point.y, r: 5 });
+		elem.classList.add(colorClass);
+		stage.add(elem);
+	}
+	else if (e.target.tagName === 'circle') {
 		elem = e.target;
 		dragging = true;
 		delta = { 
@@ -29,18 +40,7 @@ svg.addEventListener('mousedown', function(e) {
 			y: e.clientY - elem.getAttribute("cy")
 		}
 		elem.classList.add('focused');
-	}
-	if (e.target.tagName === 'circle' && e.altKey) {
-		stage.remove(elem);
-	}
-	else if (e.shiftKey) {
-		point = { x: stage.localX(e.clientX), y: stage.localY(e.clientY) };
-		if (document.querySelector('circle.focused')) document.querySelector('circle.focused').classList.remove('focused');
-		elem = SVGShapes.createCircle({ x: point.x, y: point.y, r: 5 });
-		elem.classList.add(colorClass);
-		stage.add(elem);
-	}
-	console.log(e);
+	} 
 });
 
 svg.addEventListener('mousemove', function(e) {
@@ -58,6 +58,7 @@ svg.addEventListener('mousemove', function(e) {
 });
 
 svg.addEventListener('mouseup', function(e) {
+	elem.classList.remove('focused');
 	elem = null;
 	dragging = false;
 });

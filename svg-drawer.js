@@ -12,7 +12,7 @@ class SVGShapes {
         return circle;
     }
 
-    static createPolyline({ points}) {
+    static createPolyline({ points }) {
         if (points.length < 2) throw new ReferenceError('Should be at least 2 points for Polyline');
 
         var polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
@@ -68,14 +68,10 @@ class SVGStage {
     }
 
     localX(globalX) { 
-        return globalX - this.svg.getBoundingClientRect().x;
+        return globalX - this.svg.getBoundingClientRect().left;
     }
 
     localY(globalY) { 
-        return globalY - this.svg.getBoundingClientRect().y;
+        return globalY - this.svg.getBoundingClientRect().top;
     }
-
-    /*get items = function* () {
-
-    }*/
 }

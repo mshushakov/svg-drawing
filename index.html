@@ -29,6 +29,7 @@
         width: 100%;
         height: 100%;
         vertical-align: top;
+        cursor: default;
     }
 
     circle {
@@ -42,7 +43,7 @@
         margin: 0;
     }
 
-    .focused { opacity: 0.5; z-index: 1; }
+    .focused { opacity: 0.5; }
 
     .colors li { display: inline-block; border: 8px solid; }
     .colors li.selected { outline: 1px solid #666; }
@@ -65,7 +66,7 @@
 	<li class="color-5"></li>
 </ul>
 
-<div class="info">Press shift and start drawing circles :)</div>
+<div class="info">1) Click on empty space to add a circle <br> 2) Drag and drop circles <br> 3) Press alt and click to a circle to remove <br> 4) Press shift and click to add a circle over another ci</div>
 
 <svg draggable="false"></svg>
 
