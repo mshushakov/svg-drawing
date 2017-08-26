@@ -7,8 +7,10 @@ Simple app to draw images using colored circles.
 
 ## How to use
 * Choose a color from the list of colors on top right corner
-* Press _shift_ and start drawing circles of any size
-* Unpress _shift_ and move circles around viewport
+* Click on empty space to add a circle
+* Drag and drop moves circles
 * Press _alt_ and click on circle to remove it
+* Press shift and click to add a circle over another
+* Mouse press and drag adds and resizes a circle
 
 __Have fun!__
